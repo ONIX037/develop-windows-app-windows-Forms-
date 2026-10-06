@@ -116,7 +116,7 @@
             this.Controls.Add(this.cardNumber_txtBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "changeForm";
-            this.Text = "Form2";
+            this.Text = "ChangeForm";
             this.Load += new System.EventHandler(this.changeForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.changeForm_KeyDown);
             this.ResumeLayout(false);

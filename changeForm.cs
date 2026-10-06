@@ -75,10 +75,18 @@ namespace lab1
                     MessageBoxIcon.Error);
                 return;
             }
+            // проверка возраста
+            IPerson candidate = new Person(cardNumber, name_txtBox.Text, dateTimePicker.Value);
+            if (!candidate.calcAge(DateTime.Now, out int age))
+            {
+                MessageBox.Show("Неверный формат ввода даты рождения.",
+                    "ошибка!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
             //сохранение введенных данных
-            PersonResult = new Person(cardNumber,
-                name_txtBox.Text,
-                dateTimePicker.Value);
+            PersonResult = candidate;
             DialogResult = DialogResult.OK;
             this.Close();   
         }
