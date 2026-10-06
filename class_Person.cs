@@ -1,11 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace lab1
 {
+
+
+
+
+
     internal class Person : IPerson
     {
         public int СardNumber { get; }
@@ -17,31 +24,52 @@ namespace lab1
         {
             СardNumber = cardNumber;
             Name = name;
-            Bithday = bithday; 
+            Bithday = bithday;
         }
 
-        
+
         //функция подсчета возраста
-        public int calcAge(DateTime date) {
-        int age = date.Year - Bithday.Year;
-            if (date.Month < Bithday.Month || (date.Month == Bithday.Month && date.Day < Bithday.Day))
+        public bool calcAge(DateTime date, out int age)
         {
-            age--;
-        }
-        
-        return age;
+            age = 0;
+
+            if (date < Bithday)
+                return false;
+
+            age = date.Year - Bithday.Year;
+
+            if (date.Month < Bithday.Month ||
+                (date.Month == Bithday.Month && date.Day < Bithday.Day))
+            {
+                age--;
+            }
+
+            if (age > 150)
+            {
+                age = 0;
+                return false;
+            }
+
+            return true;
         }
 
+        //вывод имени и возраста в listBox
 
-        //переопределение tostring для нормального вывода записей в listbox
-        public override string ToString()
+        public string displayText
         {
-            return $"{Name} - {calcAge(DateTime.Now)} лет";
+            get
+            {
+                if ( calcAge(DateTime.Now, out int age))
+                    return $"{Name} — {age} лет";
 
+                return $"{Name} — возраст не указан";
+            }
         }
+
+
     }
 }
-            
+        
     
     
 

@@ -114,6 +114,7 @@
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.name_txtBox);
             this.Controls.Add(this.cardNumber_txtBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "changeForm";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.changeForm_Load);

@@ -11,7 +11,8 @@ namespace lab1
         int СardNumber { get; }
          string Name { get; }
          DateTime Bithday { get; }
-         int calcAge(DateTime date);
+         string displayText { get; }
+         bool calcAge(DateTime date, out int age);
     }
    
 }

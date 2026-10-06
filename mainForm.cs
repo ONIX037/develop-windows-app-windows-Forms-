@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,8 +17,9 @@ namespace lab1
         {
             InitializeComponent();
             listBox1.DataSource = peopleList;
+            listBox1.DisplayMember = nameof(Person.displayText);
 
-            // adding new persons
+            // добавляем тестовых пользователей
             peopleList.Add(new Person(12701, "Петр", new DateTime(2007, 11, 16)));
             peopleList.Add(new Person(12355, "Кирилл", new DateTime(2007, 7, 12)));
         }

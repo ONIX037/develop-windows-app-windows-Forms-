@@ -84,6 +84,7 @@
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.userComboBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "loginForm";
             this.Text = "adminForm";
             this.Load += new System.EventHandler(this.LoginForm_Load);

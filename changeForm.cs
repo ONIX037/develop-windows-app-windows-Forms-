@@ -67,7 +67,7 @@ namespace lab1
 
             //проверка введеных данных
             if (!int.TryParse(cardNumber_txtBox.Text, out int cardNumber) || 
-                cardNumber_txtBox.Text.Length != 5)
+                cardNumber_txtBox.Text.Length != 5 || cardNumber < 10000 || cardNumber > 99999)
             {
                 MessageBox.Show("Неверный формат ввода номера карты.",
                     "ошибка!",
