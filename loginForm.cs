@@ -33,7 +33,6 @@ namespace lab1
             InitializeComponent();
             LoadUsersFromEnv("C:\\Users\\xbox3\\source\\repos\\lab1\\.env");
             userComboBox.SelectedItem = "user";
-            
         }
 
         private string ComputeMD5Hash(string input)
@@ -124,8 +123,8 @@ namespace lab1
                     passwordTextBox.Focus();
                 }
                 }
-            }
-        
+                }
+
 
         private void cancelButton_Click(object sender, EventArgs e)
         {

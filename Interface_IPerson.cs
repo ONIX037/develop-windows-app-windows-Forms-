@@ -8,7 +8,7 @@ namespace lab1
 {
     public interface IPerson
     {
-        int СardNumber { get; }
+        int CardNumber { get; }
          string Name { get; }
          DateTime Bithday { get; }
 

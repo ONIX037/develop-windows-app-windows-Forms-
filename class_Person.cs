@@ -15,14 +15,14 @@ namespace lab1
 
     internal class Person : IPerson
     {
-        public int СardNumber { get; }
+        public int CardNumber { get; }
         public string Name { get; }
         public DateTime Bithday { get; }
 
         //инициализация значений свойсвт при создании обьекта
         public Person(int cardNumber, string name, DateTime bithday)
         {
-            СardNumber = cardNumber;
+            CardNumber = cardNumber;
             Name = name;
             Bithday = bithday;
         }
